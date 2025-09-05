@@ -1,0 +1,47 @@
+
+# create user dtu
+# sudo su
+useradd -m -G wheel -s /bin/bash dtu
+passwd dtu
+
+# sudo & vim
+pacman -Sy sudo
+pacman -Sy vim
+export EDITOR=vim
+visudo
+
+# git
+sudo pacman -S git
+sudo gpasswd -a dtu git
+git config --global user.email "useremail"
+git config --global user.name "username"
+# feature/, bugfix/, hotfix/, design/, refactor/, test/, or doc/
+
+
+# docker
+sudo pacman -S docker
+sudo pacman -S docker-buildx
+sudo pacman -S docker-compose
+sudo gpasswd -a dtu docker
+- oder sudo usermod -aG docker dtu
+
+# check user dtu with groups
+id dtu
+groups dtu
+
+# start docker service and enable it at startup
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+docker --version
+
+sudo localectl set-locale de_DE.UTF-8
+de_DE.ISO-8859-1
+de_DE.ISO-8859-15@euro
+sudo localectl set-locale en_US.UTF-8
+
+# uv
+sudo pacman -Sy uv
+
+# windows port forwarding, as admin
+netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=dtu
+
