@@ -45,3 +45,7 @@ sudo pacman -Sy uv
 # windows port forwarding, as admin
 netsh interface portproxy add v4tov4 listenport=80 listenaddress=0.0.0.0 connectport=80 connectaddress=dtu
 
+# bashrc scripts
+git clone https://github.com/DTU-travelpals/bash_arch_helpers.git
+ln -s /home/dtu/dev/bash_arch_helpers/scripts/.bashrc ~/.bashrc
+ln -s /home/dtu/dev/bash_arch_helpers/scripts/docker-aliases.sh ~/.bash/docker-aliases.sh
