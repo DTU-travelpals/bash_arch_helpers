@@ -10,6 +10,9 @@ pacman -Sy vim
 export EDITOR=vim
 visudo
 
+# update mirrors
+sudo pacman -Syu
+
 # git
 sudo pacman -S git
 sudo gpasswd -a dtu git
