@@ -106,8 +106,8 @@ function d-aws-cli-fn {
 
 alias daws=d-aws-cli-fn
 alias dc=dc-fn
-alias du="docker compose up -d -y --build"
-alias dd="docker compose down --remove-orphans --volumes"
+alias du="docker compose up --build"
+alias dd="docker compose down --remove-orphans"
 alias dcr=dcr-fn
 alias dex=dex-fn
 alias din=din-fn
